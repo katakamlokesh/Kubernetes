@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jenkins-pod
+  labels:
+    name: jenkins-pod
+    author: lokesh
+    type: ci-cd
+spec:
+  containers:
+    - name: devserver
+      image: jenkins
+      ports:
+        - containerPort: 8080
+...
+

@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tomcat-service
+  labels:
+    author: lokesh
+    type: frontend
+spec:
+  type: NodePort
+  ports:
+  - nodePort: 31001
+    port: 7070
+    targetPort: 8080
+  selector:
+    author: lokesh
+    type: frontend
+...
+

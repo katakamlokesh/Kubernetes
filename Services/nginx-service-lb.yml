@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  labels:
+    author: lokesh
+    app: nginx-app
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-backend-protocol: "tcp"
+    service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: "*"
+spec:
+  type: LoadBalancer
+  ports:
+   - port: 80
+     protocol: TCP
+  selector:
+    app: nginx-app
+    tier: frontend
+...
+

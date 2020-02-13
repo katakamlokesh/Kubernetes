@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tomcat-pod
+  labels:
+    author: lokesh
+    type: frontend
+spec:
+  containers:
+    - name: webserver
+      image: tomcat
+      ports:
+        - containerPort: 8080
+...
+`

@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: tomcat-rs
+  labels:
+    app: tomcat
+    type: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      type: frontend
+  template:
+    metadata:
+      labels:
+        type: frontend
+    spec:
+      containers:
+      - name: webserver
+        image: tomcat
+        ports:
+        - containerPort: 8080      
+...
+
